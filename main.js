@@ -58,15 +58,9 @@ function pickComputerMove() {
 
   let computerMove = '';
 
-  const randomNumber = Math.random();
-
-  if (randomNumber >= 0 && randomNumber < 1/3) {
-    computerMove = 'rock';
-  } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
-    computerMove = 'paper';
-  } else if (randomNumber >= 2/3 && randomNumber < 1) {
-    computerMove = 'scissors';
-  }
+  const randomNumber = Math.floor(Math.random()*3);
+  const choices = ['rock', 'paper', 'scissors'];
+  computerMove = choices[randomNumber];
 
   return computerMove;
 }
