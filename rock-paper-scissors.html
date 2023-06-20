@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>rock paper scissors</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
 
+    <p class="title">Rock Paper Scissors</p>
+
+    <button class="move-button" onclick="
+      playGame('rock');
+    ">
+      <img src="assets/rock-emoji.png" class="move-icon">
+    </button>
+
+    <button class="move-button" onclick="
+      playGame('paper');
+    ">
+      <img src="assets/paper-emoji.png" class="move-icon">
+    </button>
+
+    <button class="move-button" onclick="    
+      playGame('scissors');
+    ">
+      <img src="assets/scissors-emoji.png" class="move-icon">
+    </button>
+    
+    <p class="js-result result"></p>
+    <p class="js-moves moves"></p>
+    <p class="js-score"></p>
+
+    <button class="reset-button" onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.setItem('score', JSON.stringify(score));
+      document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+    ">Reset Score</button>
+
+    <script src="main.js"></script> 
+  </body>
+</html>
